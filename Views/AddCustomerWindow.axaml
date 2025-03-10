@@ -1,0 +1,20 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:WeChipItAvalonia.ViewModels"
+        x:Class="WeChipItAvalonia.Views.AddCustomerWindow"
+        x:DataType="vm:AddCustomerWindowViewModel"
+        Title="Add Customer">
+
+    <Window.DataContext>
+        <vm:AddCustomerWindowViewModel />
+    </Window.DataContext>
+
+    <StackPanel Margin="10">
+        <TextBox x:Name="txtName" Watermark="Name" Text="{Binding Name}" />
+        <TextBox x:Name="txtContact" Watermark="Contact Number" Text="{Binding Contact}" />
+        <TextBox x:Name="txtEmail" Watermark="Email" Text="{Binding Email}" />
+        <TextBox x:Name="txtAddress" Watermark="Address" Text="{Binding Address}" />
+        <Button Content="Save" Command="{Binding SaveCommand}" />
+        <Button Content="Cancel" Command="{Binding CancelCommand}" />
+    </StackPanel>
+</Window>

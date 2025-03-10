@@ -1,0 +1,20 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:WeChipItAvalonia.ViewModels"
+        x:Class="WeChipItAvalonia.Views.AddAnimalWindow"
+        x:DataType="vm:AddAnimalWindowViewModel"
+        Title="Add Animal">
+
+    <Window.DataContext>
+        <vm:AddAnimalWindowViewModel />
+    </Window.DataContext>
+
+    <StackPanel Margin="10">
+        <TextBox x:Name="txtAnimalName" Watermark="Animal Name" Text="{Binding AnimalName}" />
+        <ComboBox x:Name="cmbAnimalType" ItemsSource="{Binding AnimalTypes}" SelectedItem="{Binding SelectedAnimalType}" />
+        <ComboBox x:Name="cmbSex" ItemsSource="{Binding SexOptions}" SelectedItem="{Binding SelectedSex}" />
+        <CheckBox x:Name="chkMicrochipped" Content="Microchipped" IsChecked="{Binding IsMicrochipped}" />
+        <Button Content="Save" Command="{Binding SaveCommand}" />
+        <Button Content="Cancel" Command="{Binding CancelCommand}" />
+    </StackPanel>
+</Window>

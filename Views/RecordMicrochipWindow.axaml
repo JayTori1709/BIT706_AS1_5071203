@@ -1,0 +1,20 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:WeChipItAvalonia.ViewModels"
+        x:Class="WeChipItAvalonia.Views.RecordMicrochipWindow"
+        x:DataType="vm:RecordMicrochipWindowViewModel"
+        Title="Record Microchip Implant">
+
+    <Window.DataContext>
+        <vm:RecordMicrochipWindowViewModel />
+    </Window.DataContext>
+
+    <StackPanel Margin="10">
+        <TextBox x:Name="txtCustomerName" Watermark="Customer Name" Text="{Binding CustomerName}" />
+        <TextBox x:Name="txtAnimalName" Watermark="Animal Name" Text="{Binding AnimalName}" />
+        <TextBox x:Name="txtMicrochipNumber" Watermark="Microchip Number" Text="{Binding MicrochipNumber}" />
+        <DatePicker x:Name="dpDateIssued" SelectedDate="{Binding DateIssued}" />
+        <Button Content="Save" Command="{Binding SaveCommand}" />
+        <Button Content="Cancel" Command="{Binding CancelCommand}" />
+    </StackPanel>
+</Window>

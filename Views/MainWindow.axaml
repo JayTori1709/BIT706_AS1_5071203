@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:WeChipItAvalonia.ViewModels"
+        x:Class="WeChipItAvalonia.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="We-Chip-It: Main Menu">
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+
+    <StackPanel Margin="10">
+        <Button Content="Add Customer" Command="{Binding AddCustomerCommand}" />
+        <Button Content="Add Animal" Command="{Binding AddAnimalCommand}" />
+        <Button Content="Record Microchip" Command="{Binding RecordMicrochipCommand}" />
+        <Button Content="Exit" Command="{Binding ExitCommand}" />
+    </StackPanel>
+</Window>
