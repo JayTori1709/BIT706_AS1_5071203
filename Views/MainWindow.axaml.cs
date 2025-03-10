@@ -14,6 +14,7 @@ namespace WeChipItAvalonia.Views
 
         public MainWindow()
         {
+            InitializeComponent();
             AddCustomerCommand = ReactiveCommand.Create(AddCustomer);
             AddAnimalCommand = ReactiveCommand.Create(AddAnimal);
             RecordMicrochipCommand = ReactiveCommand.Create(RecordMicrochip);

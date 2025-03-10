@@ -3,16 +3,23 @@
         xmlns:vm="using:WeChipItAvalonia.ViewModels"
         x:Class="WeChipItAvalonia.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Title="We-Chip-It: Main Menu">
+        Title="We-Chip-It: Main Menu"
+        Width="400" Height="300">
 
     <Window.DataContext>
         <vm:MainWindowViewModel />
     </Window.DataContext>
 
-    <StackPanel Margin="10">
-        <Button Content="Add Customer" Command="{Binding AddCustomerCommand}" />
-        <Button Content="Add Animal" Command="{Binding AddAnimalCommand}" />
-        <Button Content="Record Microchip" Command="{Binding RecordMicrochipCommand}" />
-        <Button Content="Exit" Command="{Binding ExitCommand}" />
-    </StackPanel>
+    <Grid>
+        <!-- Logo on the left -->
+        <Image Source="/Assets/WeChipItImage.png" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20" Width="100" Height="100" />
+
+        <!-- Buttons on the right -->
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20" Spacing="10">
+            <Button Content="Add a Customer" Command="{Binding AddCustomerCommand}" />
+            <Button Content="Add an Animal" Command="{Binding AddAnimalCommand}" />
+            <Button Content="Record Microchip" Command="{Binding RecordMicrochipCommand}" />
+            <Button Content="Quit" Command="{Binding QuitCommand}" />
+        </StackPanel>
+    </Grid>
 </Window>
