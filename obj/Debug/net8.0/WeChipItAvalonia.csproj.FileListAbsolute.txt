@@ -67,7 +67,6 @@
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.AssemblyInfoInputs.cache
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.AssemblyInfo.cs
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.csproj.CoreCompileInputs.cache
-/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.sourcelink.json
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/Avalonia/WeChipItAvalonia.dll
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/Avalonia/WeChipItAvalonia.pdb
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/refint/Avalonia/WeChipItAvalonia.dll

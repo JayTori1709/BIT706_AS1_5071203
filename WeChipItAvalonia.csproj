@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+   <AvaloniaResource Include="Assets\WeChipItImage.png" />
     <PackageReference Include="Avalonia" Version="11.2.5" />
     <PackageReference Include="Avalonia.Desktop" Version="11.2.1" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.5" />
