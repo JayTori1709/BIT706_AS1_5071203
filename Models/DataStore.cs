@@ -1,35 +1,24 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json;
-using System.IO;
+using WeChipItAvalonia.Models;
 
-namespace WeChipItAvalonia.Models
+namespace WeChipItAvalonia.Services
 {
     public class DataStore
     {
-        private List<Customer> customers = new List<Customer>();
-        private List<Animal> animals = new List<Animal>();
-        private List<Microchip> microchips = new List<Microchip>();
+        private static DataStore? _instance;
+        public static DataStore Instance => _instance ??= new DataStore();
 
-        public void AddCustomer(Customer customer) => customers.Add(customer);
-        public void AddAnimal(Animal animal) => animals.Add(animal);
-        public void AddMicrochip(Microchip microchip) => microchips.Add(microchip);
+        private List<Customer> _customers = new List<Customer>();
 
-        public List<Customer> GetCustomers() => customers;
-        public List<Animal> GetAnimals() => animals;
-        public List<Microchip> GetMicrochips() => microchips;
-
-        public void SaveData()
+        public void AddCustomer(Customer customer)
         {
-            File.WriteAllText("data.json", JsonSerializer.Serialize(this));
+            _customers.Add(customer);
         }
 
-        public static DataStore LoadData()
+        public Customer? GetCustomerByPhone(string phone)
         {
-            if (!File.Exists("data.json")) return new DataStore();
-#pragma warning disable CS8603 // Possible null reference return.
-            return JsonSerializer.Deserialize<DataStore>(File.ReadAllText("data.json"));
-#pragma warning restore CS8603 // Possible null reference return.
+            return _customers.FirstOrDefault(c => c.Contact == phone);
         }
     }
 }
