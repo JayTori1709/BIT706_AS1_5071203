@@ -2,20 +2,14 @@ namespace WeChipItAvalonia.Models
 {
     public class Customer
     {
-        public string Name { get; set; }
-        public string ContactNumber { get; set; }
-        public string Email { get; set; }
-
-        public Customer(string name, string contactNumber, string email)
-        {
-            Name = name;
-            ContactNumber = contactNumber;
-            Email = email;
-        }
+        public required string Name { get; set; }
+        public required string Contact { get; set; }
+        public required string Email { get; set; }
+        public required string Address { get; set; }
 
         public override string ToString()
         {
-            return $"{Name}, {ContactNumber}, {Email}";
+            return $"{Name}, {Contact}, {Email}";
         }
     }
 }

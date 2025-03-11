@@ -3,18 +3,30 @@
         xmlns:vm="using:WeChipItAvalonia.ViewModels"
         x:Class="WeChipItAvalonia.Views.AddCustomerWindow"
         x:DataType="vm:AddCustomerWindowViewModel"
-        Title="Add Customer">
+        Title="Add Customer"
+        Width="400" Height="300">
 
     <Window.DataContext>
         <vm:AddCustomerWindowViewModel />
     </Window.DataContext>
 
-    <StackPanel Margin="10">
+    <StackPanel Margin="10" Spacing="10">
+        <!-- Name -->
         <TextBox x:Name="txtName" Watermark="Name" Text="{Binding Name}" />
-        <TextBox x:Name="txtContact" Watermark="Contact Number" Text="{Binding Contact}" />
+
+        <!-- Phone Number -->
+        <TextBox x:Name="txtPhone" Watermark="Phone Number" Text="{Binding Contact}" />
+
+        <!-- Email -->
         <TextBox x:Name="txtEmail" Watermark="Email" Text="{Binding Email}" />
+
+        <!-- Address -->
         <TextBox x:Name="txtAddress" Watermark="Address" Text="{Binding Address}" />
-        <Button Content="Save" Command="{Binding SaveCommand}" />
-        <Button Content="Cancel" Command="{Binding CancelCommand}" />
+
+        <!-- Buttons -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+            <Button Content="Cancel" Command="{Binding CancelCommand}" />
+            <Button Content="Save" Command="{Binding SaveCommand}" />
+        </StackPanel>
     </StackPanel>
 </Window>

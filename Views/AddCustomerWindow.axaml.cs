@@ -17,6 +17,7 @@ namespace WeChipItAvalonia.Views
 
         public AddCustomerWindow() // Fix the constructor name here
         {
+            InitializeComponent();
             SaveCommand = ReactiveCommand.Create(Save);
             CancelCommand = ReactiveCommand.Create(Cancel);
         }
