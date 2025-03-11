@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using System.Collections.Generic;
 using System.Reactive;
 using WeChipItAvalonia.ViewModels;
+using System;
 
 namespace WeChipItAvalonia.Views
 {
@@ -26,6 +27,11 @@ namespace WeChipItAvalonia.Views
             DataContext = new AddCustomerWindowViewModel();
         }
 
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
+
         private void Save()
         {
             // Logic to save the animal
@@ -37,7 +43,7 @@ namespace WeChipItAvalonia.Views
         }
     }
 
-    public class ViewModelBase
+    public class ViewModelBase : ReactiveObject
     {
     }
 }
