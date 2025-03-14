@@ -3,33 +3,43 @@
         xmlns:vm="using:WeChipItAvalonia.ViewModels"
         x:Class="WeChipItAvalonia.Views.AddAnimalWindow"
         x:DataType="vm:AddAnimalWindowViewModel"
-        Title="Add Animal"
-        Width="400" Height="300">
+        Title="We-Chip-It: Add Animal"
+        Width="450" Height="450"  
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="Manual">
 
     <Window.DataContext>
         <vm:AddAnimalWindowViewModel />
     </Window.DataContext>
 
-    <StackPanel Margin="10" Spacing="10">
+    <StackPanel Margin="20" Spacing="15">
         <!-- Customer Name -->
-        <TextBox x:Name="txtCustomerName" Watermark="Customer Name" Text="{Binding CustomerName}" />
+        <TextBlock Text="Customer Name:" FontWeight="Bold" />
+        <TextBox x:Name="txtCustomerName" Watermark="Enter customer name" Text="{Binding CustomerName}" />
 
         <!-- Animal Name -->
-        <TextBox x:Name="txtAnimalName" Watermark="Animal Name" Text="{Binding AnimalName}" />
+        <TextBlock Text="Animal Name:" FontWeight="Bold" />
+        <TextBox x:Name="txtAnimalName" Watermark="Enter animal name" Text="{Binding AnimalName}" />
 
         <!-- Type of Animal -->
+        <TextBlock Text="Type of Animal:" FontWeight="Bold" />
         <ComboBox x:Name="cmbAnimalType" ItemsSource="{Binding AnimalTypes}" SelectedItem="{Binding SelectedAnimalType}" />
 
         <!-- Age -->
-        <TextBox x:Name="txtAge" Watermark="Age" Text="{Binding Age}" />
+        <TextBlock Text="Age:" FontWeight="Bold" />
+        <TextBox x:Name="txtAge" Watermark="Enter age" Text="{Binding Age}" />
 
         <!-- Sex -->
+        <TextBlock Text="Sex:" FontWeight="Bold" />
         <ComboBox x:Name="cmbSex" ItemsSource="{Binding SexOptions}" SelectedItem="{Binding SelectedSex}" />
 
+        <!-- Microchipped -->
+        <CheckBox x:Name="chkMicrochipped" Content="Microchipped" IsChecked="{Binding IsMicrochipped}" Margin="0,10,0,0" />
+
         <!-- Buttons -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
-            <Button Content="Cancel" Command="{Binding CancelCommand}" />
-            <Button Content="Save" Command="{Binding SaveCommand}" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="0,20,0,0">
+            <Button Content="Cancel" Command="{Binding CancelCommand}" Width="100" />
+            <Button Content="Save" Command="{Binding SaveCommand}" Width="100" />
         </StackPanel>
     </StackPanel>
 </Window>

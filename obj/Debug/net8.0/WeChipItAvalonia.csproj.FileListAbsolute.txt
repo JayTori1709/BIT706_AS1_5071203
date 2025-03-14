@@ -73,3 +73,6 @@
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipIt.B2EA069D.Up2Date
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.genruntimeconfig.cache
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/ref/WeChipItAvalonia.dll
+/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.dll
+/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/refint/WeChipItAvalonia.dll
+/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.pdb
