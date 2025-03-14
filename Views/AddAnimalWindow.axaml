@@ -3,18 +3,33 @@
         xmlns:vm="using:WeChipItAvalonia.ViewModels"
         x:Class="WeChipItAvalonia.Views.AddAnimalWindow"
         x:DataType="vm:AddAnimalWindowViewModel"
-        Title="Add Animal">
+        Title="Add Animal"
+        Width="400" Height="300">
 
     <Window.DataContext>
         <vm:AddAnimalWindowViewModel />
     </Window.DataContext>
 
-    <StackPanel Margin="10">
+    <StackPanel Margin="10" Spacing="10">
+        <!-- Customer Name -->
+        <TextBox x:Name="txtCustomerName" Watermark="Customer Name" Text="{Binding CustomerName}" />
+
+        <!-- Animal Name -->
         <TextBox x:Name="txtAnimalName" Watermark="Animal Name" Text="{Binding AnimalName}" />
+
+        <!-- Type of Animal -->
         <ComboBox x:Name="cmbAnimalType" ItemsSource="{Binding AnimalTypes}" SelectedItem="{Binding SelectedAnimalType}" />
+
+        <!-- Age -->
+        <TextBox x:Name="txtAge" Watermark="Age" Text="{Binding Age}" />
+
+        <!-- Sex -->
         <ComboBox x:Name="cmbSex" ItemsSource="{Binding SexOptions}" SelectedItem="{Binding SelectedSex}" />
-        <CheckBox x:Name="chkMicrochipped" Content="Microchipped" IsChecked="{Binding IsMicrochipped}" />
-        <Button Content="Save" Command="{Binding SaveCommand}" />
-        <Button Content="Cancel" Command="{Binding CancelCommand}" />
+
+        <!-- Buttons -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+            <Button Content="Cancel" Command="{Binding CancelCommand}" />
+            <Button Content="Save" Command="{Binding SaveCommand}" />
+        </StackPanel>
     </StackPanel>
 </Window>

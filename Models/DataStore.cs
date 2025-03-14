@@ -20,5 +20,10 @@ namespace WeChipItAvalonia.Services
         {
             return _customers.FirstOrDefault(c => c.Contact == phone);
         }
+
+        public Customer? GetCustomerByName(string name)
+        {
+            return _customers.FirstOrDefault(c => c.Name == name);
+        }
     }
 }
