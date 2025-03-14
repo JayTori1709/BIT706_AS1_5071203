@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using System.Collections.Generic;
 using System.Reactive;
 using WeChipItAvalonia.ViewModels;
-using System;
+using Avalonia.Markup.Xaml;
 
 namespace WeChipItAvalonia.Views
 {
@@ -29,7 +29,7 @@ namespace WeChipItAvalonia.Views
 
         private void InitializeComponent()
         {
-            throw new NotImplementedException();
+            AvaloniaXamlLoader.Load(this);
         }
 
         private void Save()
