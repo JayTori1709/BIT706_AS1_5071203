@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WeChipItAvalonia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd638d224b21f89ebb62e8a5840c03a035132689")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ece50124b87637fafef9968eb58fe23a314ad47")]
+>>>>>>> exp1
 [assembly: System.Reflection.AssemblyProductAttribute("WeChipItAvalonia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WeChipItAvalonia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -18,6 +18,12 @@ namespace WeChipItAvalonia.ViewModels
             AddAnimalCommand = ReactiveCommand.Create(AddAnimal);
             RecordMicrochipCommand = ReactiveCommand.Create(RecordMicrochip);
             QuitCommand = ReactiveCommand.Create(Quit);
+
+             AddAnimalCommand.ThrownExceptions.Subscribe(ex =>
+    {
+        // Log or display the error
+        Console.WriteLine($"Error: {ex.Message}");
+        });
         }
 
         private void AddCustomer()
@@ -28,9 +34,18 @@ namespace WeChipItAvalonia.ViewModels
 
         private void AddAnimal()
         {
-            var addAnimalWindow = new AddAnimalWindow();
-            addAnimalWindow.Show();
-        }
+    try
+    {
+        // Open the AddAnimalWindow
+        var window = new AddAnimalWindow();
+        window.Show();
+    }
+    catch (Exception ex)
+    {
+        // Handle any exceptions
+        Console.WriteLine($"Error: {ex.Message}");
+    }
+}
 
         private void RecordMicrochip()
         {
