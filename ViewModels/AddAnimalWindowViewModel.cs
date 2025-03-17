@@ -82,69 +82,67 @@ namespace WeChipItAvalonia.ViewModels
             CancelCommand = ReactiveCommand.Create(Cancel);
         }
 
-        // Save logic
-        private async Task SaveAnimalAsync()
-        {
-            try
-            {
-                // Validate inputs
-                if (string.IsNullOrWhiteSpace(CustomerName))
-                {
-                    // Show error message (you can use a dialog or logging)
-                    Console.WriteLine("Customer Name is required.");
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(AnimalName))
-                {
-                    Console.WriteLine("Animal Name is required.");
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(SelectedAnimalType))
-                {
-                    Console.WriteLine("Type of Animal is required.");
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(Age))
-                {
-                    Console.WriteLine("Age is required.");
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(SelectedSex))
-                {
-                    Console.WriteLine("Sex is required.");
-                    return;
-                }
-
-                // Save the data (e.g., to a database or service)
-                Console.WriteLine("Saving animal data...");
-                Console.WriteLine($"Customer Name: {CustomerName}");
-                Console.WriteLine($"Animal Name: {AnimalName}");
-                Console.WriteLine($"Type: {SelectedAnimalType}");
-                Console.WriteLine($"Age: {Age}");
-                Console.WriteLine($"Sex: {SelectedSex}");
-                Console.WriteLine($"Microchipped: {IsMicrochipped}");
-
-                // TODO: Replace with actual save logic (e.g., database or API call)
-
-                // Close the window after saving
-                CloseWindow?.Invoke();
-            }
-            catch (Exception ex)
-            {
-                // Handle exceptions (e.g., log or show an error message)
-                Console.WriteLine($"Error saving animal data: {ex.Message}");
-            }
-        }
-
-        // Cancel logic
         private void Cancel()
         {
-            // Close the window without saving
-            CloseWindow?.Invoke();
+            throw new NotImplementedException();
         }
+
+        // Save logic
+       public Task SaveAnimalAsync()
+{
+    try
+    {
+        // Validate inputs
+        if (string.IsNullOrWhiteSpace(CustomerName))
+        {
+            Console.WriteLine("Customer Name is required.");
+            return Task.CompletedTask;
+        }
+
+        if (string.IsNullOrWhiteSpace(AnimalName))
+        {
+            Console.WriteLine("Animal Name is required.");
+            return Task.CompletedTask;
+        }
+
+        if (string.IsNullOrWhiteSpace(SelectedAnimalType))
+        {
+            Console.WriteLine("Type of Animal is required.");
+            return Task.CompletedTask;
+        }
+
+        if (string.IsNullOrWhiteSpace(Age))
+        {
+            Console.WriteLine("Age is required.");
+            return Task.CompletedTask;
+        }
+
+        if (string.IsNullOrWhiteSpace(SelectedSex))
+        {
+            Console.WriteLine("Sex is required.");
+            return Task.CompletedTask;
+        }
+
+        // Save the data (e.g., to a database or service)
+        Console.WriteLine("Saving animal data...");
+        Console.WriteLine($"Customer Name: {CustomerName}");
+        Console.WriteLine($"Animal Name: {AnimalName}");
+        Console.WriteLine($"Type: {SelectedAnimalType}");
+        Console.WriteLine($"Age: {Age}");
+        Console.WriteLine($"Sex: {SelectedSex}");
+        Console.WriteLine($"Microchipped: {IsMicrochipped}");
+
+        // TODO: Replace with actual save logic (e.g., database or API call)
+
+        // Close the window after saving
+        CloseWindow?.Invoke();
     }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error saving animal data: {ex.Message}");
+    }
+
+    return Task.CompletedTask;
+}
+}
 }

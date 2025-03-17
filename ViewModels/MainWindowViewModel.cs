@@ -2,6 +2,7 @@ using ReactiveUI;
 using System;
 using System.Reactive;
 using WeChipItAvalonia.Views;
+using WeChipItAvalonia.ViewModels;
 
 namespace WeChipItAvalonia.ViewModels
 {
@@ -14,41 +15,50 @@ namespace WeChipItAvalonia.ViewModels
 
         public MainWindowViewModel()
         {
+            // Initialize commands
             AddCustomerCommand = ReactiveCommand.Create(AddCustomer);
             AddAnimalCommand = ReactiveCommand.Create(AddAnimal);
             RecordMicrochipCommand = ReactiveCommand.Create(RecordMicrochip);
             QuitCommand = ReactiveCommand.Create(Quit);
 
-             AddAnimalCommand.ThrownExceptions.Subscribe(ex =>
-    {
-        // Log or display the error
-        Console.WriteLine($"Error: {ex.Message}");
-        });
+            // Handle exceptions for AddAnimalCommand
+            AddAnimalCommand.ThrownExceptions.Subscribe(ex =>
+            {
+                // Log or display the error
+                Console.WriteLine($"Error: {ex.Message}");
+            });
         }
 
         private void AddCustomer()
         {
+            // Open the AddCustomerWindow
             var addCustomerWindow = new AddCustomerWindow();
             addCustomerWindow.Show();
         }
 
         private void AddAnimal()
         {
-    try
-    {
-        // Open the AddAnimalWindow
-        var window = new AddAnimalWindow();
-        window.Show();
-    }
-    catch (Exception ex)
-    {
-        // Handle any exceptions
-        Console.WriteLine($"Error: {ex.Message}");
-    }
-}
+            try
+            {
+                // Create an instance of AddAnimalWindowViewModel
+                var viewModel = new AddAnimalWindowViewModel();
+
+                // Pass the viewModel to the AddAnimalWindow constructor
+                var addAnimalWindow = new AddAnimalWindow(viewModel);
+
+                // Show the window
+                addAnimalWindow.Show();
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions
+                Console.WriteLine($"Error opening AddAnimalWindow: {ex.Message}");
+            }
+        }
 
         private void RecordMicrochip()
         {
+            // Open the RecordMicrochipWindow
             var recordMicrochipWindow = new RecordMicrochipWindow();
             recordMicrochipWindow.Show();
         }
