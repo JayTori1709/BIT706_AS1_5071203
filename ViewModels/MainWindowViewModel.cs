@@ -2,7 +2,6 @@ using ReactiveUI;
 using System;
 using System.Reactive;
 using WeChipItAvalonia.Views;
-using WeChipItAvalonia.ViewModels;
 
 namespace WeChipItAvalonia.ViewModels
 {
@@ -11,6 +10,7 @@ namespace WeChipItAvalonia.ViewModels
         public ReactiveCommand<Unit, Unit> AddCustomerCommand { get; }
         public ReactiveCommand<Unit, Unit> AddAnimalCommand { get; }
         public ReactiveCommand<Unit, Unit> RecordMicrochipCommand { get; }
+        
         public ReactiveCommand<Unit, Unit> QuitCommand { get; }
 
         public MainWindowViewModel()
