@@ -8,18 +8,18 @@
     <Design.DataContext>
         <vm:RecordMicrochipWindowViewModel />
     </Design.DataContext>
-    <StackPanel Margin="10" Spacing="10">
+    <StackPanel Margin="10" Spacing="10" x:DataType="vm:RecordMicrochipWindowViewModel">
         <!-- Customer Name -->
         <TextBlock Text="Customer Name:" />
-        <TextBox Text="{Binding CustomerName}" />
+        <TextBox Text="{Binding CustomerName, Mode=TwoWay}" />
 
         <!-- Animal Name -->
         <TextBlock Text="Animal Name:" />
-        <TextBox Text="{Binding AnimalName}" />
+        <TextBox Text="{Binding AnimalName, Mode=TwoWay}" />
 
         <!-- Microchip Number -->
         <TextBlock Text="Microchip Number:" />
-        <TextBox Text="{Binding MicrochipNumber}" />
+        <TextBox Text="{Binding MicrochipNumber, Mode=TwoWay}" />
 
         <!-- Buttons -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">

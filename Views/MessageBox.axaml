@@ -1,0 +1,11 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="WeChipItAvalonia.Views.MessageBox"
+        Title="Error"
+        Width="300"
+        Height="150">
+    <StackPanel Margin="10" Spacing="10">
+        <TextBlock x:Name="MessageText" Text="Error message goes here." />
+        <Button Content="OK" HorizontalAlignment="Center" Click="OnOkClicked" />
+    </StackPanel>
+</Window>

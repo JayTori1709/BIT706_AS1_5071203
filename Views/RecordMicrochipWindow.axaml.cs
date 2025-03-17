@@ -2,6 +2,7 @@ using Avalonia.Controls;
 using ReactiveUI;
 using System;
 using System.Reactive;
+using WeChipItAvalonia.ViewModels;
 
 namespace WeChipItAvalonia.Views
 {
@@ -20,8 +21,10 @@ namespace WeChipItAvalonia.Views
         public RecordMicrochipWindow()
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
         {
+            InitializeComponent();
             SaveCommand = ReactiveCommand.Create(Save);
             CancelCommand = ReactiveCommand.Create(Cancel);
+            DataContext = new RecordMicrochipWindowViewModel(this);
         }
 
         private void Save()

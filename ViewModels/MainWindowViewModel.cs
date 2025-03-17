@@ -10,7 +10,7 @@ namespace WeChipItAvalonia.ViewModels
         public ReactiveCommand<Unit, Unit> AddCustomerCommand { get; }
         public ReactiveCommand<Unit, Unit> AddAnimalCommand { get; }
         public ReactiveCommand<Unit, Unit> RecordMicrochipCommand { get; }
-        
+
         public ReactiveCommand<Unit, Unit> QuitCommand { get; }
 
         public MainWindowViewModel()
@@ -58,9 +58,17 @@ namespace WeChipItAvalonia.ViewModels
 
         private void RecordMicrochip()
         {
-            // Open the RecordMicrochipWindow
-            var recordMicrochipWindow = new RecordMicrochipWindow();
-            recordMicrochipWindow.Show();
+            try
+            {
+                // Open the RecordMicrochipWindow
+                var recordMicrochipWindow = new RecordMicrochipWindow();
+                recordMicrochipWindow.Show();
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions
+                Console.WriteLine($"Error opening RecordMicrochipWindow: {ex.Message}");
+            }
         }
 
         private void Quit()
