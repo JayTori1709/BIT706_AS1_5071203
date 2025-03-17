@@ -4,7 +4,7 @@
         x:Class="WeChipItAvalonia.Views.AddAnimalWindow"
         x:DataType="vm:AddAnimalWindowViewModel"
         Title="We-Chip-It: Add Animal"
-        Width="450" Height="450"  
+        Width="450" Height="480"  
         WindowStartupLocation="CenterScreen"
         SizeToContent="Manual">
 
@@ -34,7 +34,7 @@
         <ComboBox x:Name="cmbSex" ItemsSource="{Binding SexOptions}" SelectedItem="{Binding SelectedSex}" />
 
         <!-- Microchipped -->
-        <CheckBox x:Name="chkMicrochipped" Content="Microchipped" IsChecked="{Binding IsMicrochipped}" Margin="0,10,0,0" />
+        <!-- <CheckBox x:Name="chkMicrochipped" Content="Microchipped" IsChecked="{Binding IsMicrochipped}" Margin="0,10,0,0" /> -->
 
         <!-- Buttons -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="0,20,0,0">

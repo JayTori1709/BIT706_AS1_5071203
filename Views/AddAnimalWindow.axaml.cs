@@ -4,15 +4,12 @@ using System.Collections.Generic;
 using System.Reactive;
 using WeChipItAvalonia.ViewModels;
 using Avalonia.Markup.Xaml;
-using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WeChipItAvalonia.Views
 {
     public partial class AddAnimalWindow : Window
     {
+        
         // Properties
         public string AnimalName { get; set; } = string.Empty;
         public List<string> AnimalTypes { get; } = new List<string> { "Cat", "Dog" };
@@ -38,9 +35,17 @@ namespace WeChipItAvalonia.Views
 
             CancelCommand = ReactiveCommand.Create(() =>
             {
-                Close();
+
+                viewModel.CloseWindow();
             });
         }
+
+        // Parameterless constructor for Avalonia runtime
+        public AddAnimalWindow() : this(new AddAnimalWindowViewModel())
+        {
+        }
+
+        
 
         private void InitializeComponent()
         {

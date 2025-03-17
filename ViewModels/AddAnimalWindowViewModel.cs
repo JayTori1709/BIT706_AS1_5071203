@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Reactive;
 using System.Threading.Tasks;
 using System;
-using Avalonia.Controls;
 
 namespace WeChipItAvalonia.ViewModels
 {
@@ -84,7 +83,8 @@ namespace WeChipItAvalonia.ViewModels
 
         private void Cancel()
         {
-            throw new NotImplementedException();
+            
+        Console.WriteLine("Cancel button clicked.");
         }
 
         // Save logic
