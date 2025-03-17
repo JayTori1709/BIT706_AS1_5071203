@@ -9,6 +9,8 @@ namespace WeChipItAvalonia.Views
 {
     public partial class AddAnimalWindow : Window
     {
+        
+        // Properties
         public string AnimalName { get; set; } = string.Empty;
         public List<string> AnimalTypes { get; } = new List<string> { "Cat", "Dog" };
         public string SelectedAnimalType { get; set; } = string.Empty;
@@ -19,27 +21,35 @@ namespace WeChipItAvalonia.Views
         public ReactiveCommand<Unit, Unit> SaveCommand { get; }
         public ReactiveCommand<Unit, Unit> CancelCommand { get; }
 
-        public AddAnimalWindow()
+        public AddAnimalWindow(AddAnimalWindowViewModel viewModel)
         {
             InitializeComponent();
-            SaveCommand = ReactiveCommand.Create(Save);
-            CancelCommand = ReactiveCommand.Create(Cancel);
-            DataContext = new AddCustomerWindowViewModel();
+            DataContext = viewModel;
+
+            // Initialize commands
+            SaveCommand = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await viewModel.SaveAnimalAsync(); // Use the passed viewModel instance
+                Close();
+            });
+
+            CancelCommand = ReactiveCommand.Create(() =>
+            {
+
+                viewModel.CloseWindow();
+            });
         }
+
+        // Parameterless constructor for Avalonia runtime
+        public AddAnimalWindow() : this(new AddAnimalWindowViewModel())
+        {
+        }
+
+        
 
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
-        }
-
-        private void Save()
-        {
-            // Logic to save the animal
-        }
-
-        private void Cancel()
-        {
-            // Logic to close the window
         }
     }
 

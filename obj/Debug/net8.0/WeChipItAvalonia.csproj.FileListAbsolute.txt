@@ -1,3 +1,10 @@
+/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.csproj.AssemblyReference.cache
+/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/Avalonia/Resources.Inputs.cache
+/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/Avalonia/resources
+/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.AssemblyInfoInputs.cache
+/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.AssemblyInfo.cs
+/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.csproj.CoreCompileInputs.cache
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/bin/Debug/net8.0/WeChipItAvalonia
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/bin/Debug/net8.0/WeChipItAvalonia.deps.json
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/bin/Debug/net8.0/WeChipItAvalonia.runtimeconfig.json
@@ -60,13 +67,6 @@
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/bin/Debug/net8.0/runtimes/win-x64/native/libSkiaSharp.dll
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/bin/Debug/net8.0/runtimes/win-x86/native/libSkiaSharp.dll
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
-/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.csproj.AssemblyReference.cache
-/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/Avalonia/Resources.Inputs.cache
-/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/Avalonia/resources
-/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.GeneratedMSBuildEditorConfig.editorconfig
-/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.AssemblyInfoInputs.cache
-/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.AssemblyInfo.cs
-/Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/WeChipItAvalonia.csproj.CoreCompileInputs.cache
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/Avalonia/WeChipItAvalonia.dll
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/Avalonia/WeChipItAvalonia.pdb
 /Users/jaydenwood/Desktop/BIT706_Programming_III_AS1/WeChipItAvalonia/obj/Debug/net8.0/refint/Avalonia/WeChipItAvalonia.dll
