@@ -2,19 +2,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:WeChipItAvalonia.ViewModels"
         x:Class="WeChipItAvalonia.Views.RecordMicrochipWindow"
-        x:DataType="vm:RecordMicrochipWindowViewModel"
-        Title="Record Microchip Implant">
-
-    <Window.DataContext>
+        Title="Record Microchip"
+        Width="400"
+        Height="300">
+    <Design.DataContext>
         <vm:RecordMicrochipWindowViewModel />
-    </Window.DataContext>
+    </Design.DataContext>
+    <StackPanel Margin="10" Spacing="10" x:DataType="vm:RecordMicrochipWindowViewModel">
+        <!-- Customer Name -->
+        <TextBlock Text="Customer Name:" />
+        <TextBox Text="{Binding CustomerName, Mode=TwoWay}" />
 
-    <StackPanel Margin="10">
-        <TextBox x:Name="txtCustomerName" Watermark="Customer Name" Text="{Binding CustomerName}" />
-        <TextBox x:Name="txtAnimalName" Watermark="Animal Name" Text="{Binding AnimalName}" />
-        <TextBox x:Name="txtMicrochipNumber" Watermark="Microchip Number" Text="{Binding MicrochipNumber}" />
-        <DatePicker x:Name="dpDateIssued" SelectedDate="{Binding DateIssued}" />
-        <Button Content="Save" Command="{Binding SaveCommand}" />
-        <Button Content="Cancel" Command="{Binding CancelCommand}" />
+        <!-- Animal Name -->
+        <TextBlock Text="Animal Name:" />
+        <TextBox Text="{Binding AnimalName, Mode=TwoWay}" />
+
+        <!-- Microchip Number -->
+        <TextBlock Text="Microchip Number:" />
+        <TextBox Text="{Binding MicrochipNumber, Mode=TwoWay}" />
+
+        <!-- Buttons -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+            <Button Content="Cancel" Command="{Binding CancelCommand}" />
+            <Button Content="Save" Command="{Binding SaveCommand}" />
+        </StackPanel>
     </StackPanel>
 </Window>

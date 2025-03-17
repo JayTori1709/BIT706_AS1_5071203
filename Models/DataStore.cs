@@ -1,5 +1,8 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using WeChipItAvalonia.Models;
 
 namespace WeChipItAvalonia.Services
@@ -24,6 +27,19 @@ namespace WeChipItAvalonia.Services
         public Customer? GetCustomerByName(string name)
         {
             return _customers.FirstOrDefault(c => c.Name == name);
+        }
+
+        public void SaveData()
+        {
+            try {
+                var json = JsonSerializer.Serialize(_customers);
+                File.WriteAllText("data.json", json);
+                Console.WriteLine("Data saved successfully.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving data: {ex.Message}");
+            }
         }
     }
 }
