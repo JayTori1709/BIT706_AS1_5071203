@@ -3,7 +3,6 @@ using System;
 using System.Reactive;
 using System.Threading.Tasks;
 using Avalonia.Controls;
-using WeChipItAvalonia.Models;
 using WeChipItAvalonia.Services;
 using WeChipItAvalonia.Views;
 
