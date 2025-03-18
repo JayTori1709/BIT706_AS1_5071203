@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Reactive;
 using System.Threading.Tasks;
 using System;
+using WeChipItAvalonia.Models;
+using WeChipItAvalonia.Services;
 
 namespace WeChipItAvalonia.ViewModels
 {
@@ -81,68 +83,88 @@ namespace WeChipItAvalonia.ViewModels
             CancelCommand = ReactiveCommand.Create(Cancel);
         }
 
+        // Save logic
+        public Task SaveAnimalAsync()
+        {
+            try
+            {
+                // Validate inputs
+                if (string.IsNullOrWhiteSpace(CustomerName))
+                {
+                    ShowError("Customer Name is required.");
+                    return Task.CompletedTask;
+                }
+
+                if (string.IsNullOrWhiteSpace(AnimalName))
+                {
+                    ShowError("Animal Name is required.");
+                    return Task.CompletedTask;
+                }
+
+                if (string.IsNullOrWhiteSpace(SelectedAnimalType))
+                {
+                    ShowError("Type of Animal is required.");
+                    return Task.CompletedTask;
+                }
+
+                if (string.IsNullOrWhiteSpace(Age) || !int.TryParse(Age, out _))
+                {
+                    ShowError("Age is required and must be a valid number.");
+                    return Task.CompletedTask;
+                }
+
+                if (string.IsNullOrWhiteSpace(SelectedSex))
+                {
+                    ShowError("Sex is required.");
+                    return Task.CompletedTask;
+                }
+
+                // Find the customer
+                var customer = DataStore.Instance.GetCustomerByName(CustomerName);
+                if (customer == null)
+                {
+                    ShowError("Customer not found.");
+                    return Task.CompletedTask;
+                }
+
+                // Create the animal
+                var animal = new Animal
+                {
+                    Name = AnimalName,
+                    Type = SelectedAnimalType,
+                    Sex = SelectedSex,
+                    Age = int.Parse(Age),
+                    MicrochipNumber = string.Empty // Initialize with an empty microchip number
+                };
+
+                // Add the animal to the customer
+                customer.Animals.Add(animal);
+
+                // Save the data (e.g., to a database or service)
+                DataStore.Instance.SaveData();
+
+                // Close the window
+                CloseWindow?.Invoke();
+            }
+            catch (Exception ex)
+            {
+                ShowError($"Error saving animal data: {ex.Message}");
+            }
+
+            return Task.CompletedTask;
+        }
+
+        // Cancel logic
         private void Cancel()
         {
-            
-        Console.WriteLine("Cancel button clicked.");
+            CloseWindow?.Invoke();
         }
 
-        // Save logic
-       public Task SaveAnimalAsync()
-{
-    try
-    {
-        // Validate inputs
-        if (string.IsNullOrWhiteSpace(CustomerName))
+        // Helper method to show error messages
+        private void ShowError(string message)
         {
-            Console.WriteLine("Customer Name is required.");
-            return Task.CompletedTask;
+            // Use a dialog or logging to display the error
+            Console.WriteLine(message);
         }
-
-        if (string.IsNullOrWhiteSpace(AnimalName))
-        {
-            Console.WriteLine("Animal Name is required.");
-            return Task.CompletedTask;
-        }
-
-        if (string.IsNullOrWhiteSpace(SelectedAnimalType))
-        {
-            Console.WriteLine("Type of Animal is required.");
-            return Task.CompletedTask;
-        }
-
-        if (string.IsNullOrWhiteSpace(Age))
-        {
-            Console.WriteLine("Age is required.");
-            return Task.CompletedTask;
-        }
-
-        if (string.IsNullOrWhiteSpace(SelectedSex))
-        {
-            Console.WriteLine("Sex is required.");
-            return Task.CompletedTask;
-        }
-
-        // Save the data (e.g., to a database or service)
-        Console.WriteLine("Saving animal data...");
-        Console.WriteLine($"Customer Name: {CustomerName}");
-        Console.WriteLine($"Animal Name: {AnimalName}");
-        Console.WriteLine($"Type: {SelectedAnimalType}");
-        Console.WriteLine($"Age: {Age}");
-        Console.WriteLine($"Sex: {SelectedSex}");
-        Console.WriteLine($"Microchipped: {IsMicrochipped}");
-
-        // TODO: Replace with actual save logic (e.g., database or API call)
-
-        // Close the window after saving
-        CloseWindow?.Invoke();
     }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Error saving animal data: {ex.Message}");
-    }
-
-    return Task.CompletedTask;
-}
-}
 }

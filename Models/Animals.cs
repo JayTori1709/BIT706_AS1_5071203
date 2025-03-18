@@ -6,7 +6,7 @@ namespace WeChipItAvalonia.Models
         public required string Type { get; set; }
         public required string Sex { get; set; }
         public int Age { get; set; }
-        public string MicrochipNumber { get; set; } = string.Empty; // Added for microchip functionality
+        public string MicrochipNumber { get; set; } = string.Empty; // Add this line
 
         public override string ToString()
         {
