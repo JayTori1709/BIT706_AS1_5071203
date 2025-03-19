@@ -71,7 +71,7 @@ namespace WeChipItAvalonia.ViewModels
 
                 if (string.IsNullOrWhiteSpace(MicrochipNumber) || !long.TryParse(MicrochipNumber, out _))
                 {
-                    ShowError("Microchip Number is required and must be a valid number.");
+                    ShowError("Microchip Number is required.");
                     return Task.CompletedTask;
                 }
 
